@@ -1,12 +1,12 @@
-# Local Environment Configuration Scripts
-setup_portfolio.py
-personal_portfolio.py
-
-# Operating System Metadata Files
+# OS Metadata
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Local IDE Configuration Folders
+# IDE Settings
 .vscode/
 .idea/
+
+# Local Python Environment Scripts
+*.pyc
+__pycache__/
