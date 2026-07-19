@@ -1,0 +1,12 @@
+# Local Environment Configuration Scripts
+setup_portfolio.py
+personal_portfolio.py
+
+# Operating System Metadata Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local IDE Configuration Folders
+.vscode/
+.idea/
