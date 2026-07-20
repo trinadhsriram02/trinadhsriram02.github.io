@@ -1,284 +1,309 @@
-/* --- Core Variables & Presentation Parameters --- */
+/* --- Core Variables (The UX Design System) --- */
 :root {
-    --bg-main: #fcfcfc;
-    --text-dark: #111111;
-    --text-subtle: #4c4c4c;
-    --accent-blue: #005bb5;
-    --border-gray: #e5e5e5;
-    --content-width: 760px;
-    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --primary-color: #0f172a;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --transition: all 0.2s ease-in-out;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-dark);
-    font-family: var(--font-system);
-    line-height: 1.6;
-    font-size: 15px;
-    padding: 50px 24px;
+    font-family: var(--font-stack);
+    color: var(--text-main);
+    line-height: 1.7;
+    background-color: var(--bg-white);
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: var(--content-width);
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 24px;
 }
 
-/* --- Executive Typography Header --- */
-.executive-header {
-    margin-bottom: 20px;
+/* --- Sticky Navigation --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 16px 0;
 }
 
-.name {
-    font-size: 2.2rem;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: var(--text-dark);
-    margin-bottom: 2px;
-}
-
-.role {
-    font-size: 1.15rem;
-    color: var(--text-subtle);
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.meta-links {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-}
-
-.meta-links a {
-    color: var(--text-dark);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
-}
-
-.meta-links a:hover {
-    color: var(--accent-blue);
-    border-bottom-color: var(--accent-blue);
-}
-
-.separator {
-    color: #cccccc;
-    margin: 0 8px;
-}
-
-.location-tag {
-    font-size: 0.85rem;
-    color: #666666;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    margin-top: 4px;
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background-color: var(--border-gray);
-    margin: 25px 0 35px 0;
-}
-
-/* --- Structural Base Sections --- */
-.section {
-    margin-bottom: 45px;
-}
-
-.section-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--text-dark);
-    margin-bottom: 22px;
-    border-bottom: 1px solid var(--text-dark);
-    padding-bottom: 4px;
-}
-
-.narrative {
-    font-size: 1.05rem;
-    color: #222222;
-    text-align: justify;
-}
-
-/* --- System Design Cards --- */
-.project-card {
-    margin-bottom: 35px;
-}
-
-.project-header {
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 4px;
+    align-items: center;
 }
 
-.project-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.project-links {
-    font-size: 0.85rem;
-    white-space: nowrap;
-}
-
-.code-link {
-    color: var(--accent-blue);
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
     text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a:not(.btn-primary-small) {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:not(.btn-primary-small):hover {
+    color: var(--accent-color);
+}
+
+/* --- Buttons --- */
+.btn-primary, .btn-primary-small {
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
     font-weight: 600;
-}
-
-.code-link:hover {
-    text-decoration: underline;
-}
-
-.link-sep {
-    color: #dddddd;
-    margin: 0 4px;
-}
-
-.tech-stack-line {
-    font-family: Consolas, Monaco, monospace;
-    font-size: 0.85rem;
-    color: #555555;
-    background-color: #f3f3f3;
-    padding: 3px 8px;
-    border-radius: 3px;
-    margin-bottom: 12px;
+    transition: var(--transition);
     display: inline-block;
 }
 
-.spec-list {
-    list-style-type: none;
-    padding-left: 14px;
+.btn-primary { padding: 14px 28px; font-size: 1rem; }
+.btn-primary-small { padding: 10px 20px; font-size: 0.9rem; }
+
+.btn-primary:hover, .btn-primary-small:hover { background-color: var(--accent-hover); }
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 13px 28px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-block;
 }
 
-.spec-list li {
-    position: relative;
-    margin-bottom: 6px;
-    color: #2c2c2c;
-    font-size: 0.95rem;
-    text-align: justify;
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    background-color: var(--bg-light);
 }
 
-.spec-list li::before {
-    content: "—";
-    position: absolute;
-    left: -14px;
-    color: #bbbbbb;
+/* --- Hero Section --- */
+.hero {
+    padding: 160px 0 100px;
+    background-color: var(--bg-white);
 }
 
-/* --- Matrix / Tables Infrastructure --- */
-.tech-table {
-    width: 100%;
-    border-collapse: collapse;
+.hero-content {
+    max-width: 800px;
 }
 
-.tech-table tr {
-    border-bottom: 1px solid var(--border-gray);
-}
-
-.tech-table tr:last-child {
-    border-bottom: none;
-}
-
-.tech-table td {
-    padding: 12px 0;
-    vertical-align: top;
-}
-
-.tech-label {
-    width: 25%;
+.eyebrow {
+    color: var(--accent-color);
     font-weight: 700;
-    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-size: 0.9rem;
+    margin-bottom: 16px;
 }
 
-.tech-values {
-    width: 75%;
-    color: var(--text-subtle);
-    font-size: 0.9rem;
-}
-
-/* --- Professional History Track --- */
-.job-block, .edu-block {
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     margin-bottom: 24px;
 }
 
-.job-header, .edu-header {
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 650px;
+}
+
+.hero-actions {
     display: flex;
-    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* --- Sections --- */
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+}
+
+/* --- CSS Grid Cards (The Meat & Potatoes) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+}
+
+.card-content {
+    padding: 32px;
+    flex-grow: 1;
+}
+
+.card-badge {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: #1e40af;
+    font-size: 0.75rem;
     font-weight: 700;
-    font-size: 1.05rem;
-    margin-bottom: 2px;
-}
-
-.job-company, .edu-school {
-    color: var(--text-dark);
-}
-
-.job-date, .edu-date {
-    color: var(--text-subtle);
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.job-sub, .edu-degree {
-    font-style: italic;
-    color: #555555;
-    font-size: 0.95rem;
-    margin-bottom: 6px;
-}
-
-.job-summary {
-    font-size: 0.95rem;
-    color: var(--text-subtle);
-}
-
-/* --- Certifications Display Layers --- */
-.certifications-block {
-    margin-top: 25px;
-    background-color: #fafafa;
-    border: 1px solid var(--border-gray);
-    padding: 20px;
-    border-radius: 4px;
-}
-
-.cert-title {
-    font-size: 0.95rem;
-    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
     margin-bottom: 12px;
-    color: var(--text-dark);
 }
 
-.cert-list {
-    list-style-type: square;
-    padding-left: 18px;
+.card-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
 }
 
-.cert-list li {
-    font-size: 0.9rem;
-    color: var(--text-subtle);
-    margin-bottom: 6px;
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-/* --- Document Footnotes --- */
-.executive-footer {
-    margin-top: 70px;
-    border-top: 1px solid var(--border-gray);
-    padding-top: 25px;
+.tech-tags span {
+    font-family: monospace;
     font-size: 0.85rem;
-    color: #777777;
+    background: var(--bg-light);
+    color: var(--text-main);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.card-actions {
+    padding: 20px 32px;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--border-color);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    gap: 16px;
+}
+
+.card-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Skills Matrix --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.skill-category {
+    padding: 24px 0;
+    border-top: 2px solid var(--primary-color);
+}
+
+.skill-category h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.skill-category p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 40px 0;
     text-align: center;
+}
+
+.footer-content p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
 }
