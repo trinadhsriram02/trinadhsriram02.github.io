@@ -3,114 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trinadh Sriram | Intelligent Systems & ML Engineering</title>
+    <title>Trinadh Sriram | AI/ML Software Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main class="container">
-        <!-- Executive Header -->
+        <!-- Executive Engineering Header -->
         <header class="executive-header">
             <h1 class="name">Trinadh Sriram</h1>
-            <p class="role">Computer Science & Systems Engineer</p>
+            <p class="role">AI/ML Software Engineer</p>
             <div class="meta-links">
-                <a href="mailto:trinadhsriram02@gmail.com" target="_blank">trinadhsriram02@gmail.com</a>
+                <a href="mailto:trinadhsriramjob@gmail.com" target="_blank">trinadhsriramjob@gmail.com</a>
                 <span class="separator">•</span>
-                <a href="https://github.com/trinadhsriram02" target="_blank">github.com/trinadhsriram02</a>
+                <a href="tel:+919391738259">+91-9391738259</a>
                 <span class="separator">•</span>
-                <a href="https://linkedin.com/in/trinadhsriram" target="_blank">linkedin.com/in/trinadhsriram</a>
+                <a href="https://linkedin.com/in/trinadh-sriram" target="_blank">LinkedIn</a>
+                <span class="separator">•</span>
+                <a href="https://github.com/trinadhsriram02" target="_blank">GitHub Profile</a>
             </div>
+            <p class="location-tag">Tirupati, Andhra Pradesh</p>
         </header>
 
         <hr class="divider">
 
-        <!-- Executive Summary -->
+        <!-- Core Professional Abstract -->
         <section class="section summary-section">
             <p class="narrative">
-                Systems engineer focused on developing high-throughput ML pipelines, automated security instrumentation, and predictive risk models. Specialized in transforming raw models into production-grade APIs, optimizing runtime execution environments, and writing deterministic, clean codebases. 
+                AI/ML Software Engineer with progressive experience owning end-to-end ML workflows: data ingestion, feature engineering, model training and validation, model serving, model monitoring, drift detection, observability, and CI/CD-gated cloud deployment. Proven track record shipping production AI/ML systems driving measurable outcomes: 94% precision/91% recall/0.92 F1 on threat classification, 100% backdoor-detection accuracy, and a 97% reduction in processing latency through policy-based agent automation. Specialized in writing clean, highly resilient code integrated with rigorous test environments.
             </p>
         </section>
 
-        <!-- Technical Production Track -->
+        <!-- Production Deployments & Systems Deep-Dive -->
         <section class="section engineering-section">
-            <h2 class="section-title">Core Systems & Production Implementations</h2>
+            <h2 class="section-title">Production Implementations & Architectures</h2>
             
-            <!-- Project 1 -->
+            <!-- System 1: AutonomousSOC -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">AutonomousSOC-API</h3>
+                    <h3 class="project-title">AutonomousSOC — Policy-Based LLM Agent for Security Operations</h3>
                     <div class="project-links">
-                        <a href="https://github.com/trinadhsriram02/AutonomousSOC-API" class="code-link" target="_blank">Codebase ↗</a>
+                        <a href="https://github.com/trinadhsriram02/autonomous-soc" class="code-link" target="_blank">Codebase ↗</a>
                         <span class="link-sep">|</span>
-                        <a href="https://huggingface.co/trinadhsriram02" class="code-link" target="_blank">Hugging Face Space ↗</a>
+                        <a href="https://huggingface.co/spaces/trinadhsriram02/AutonomousSOC" class="code-link" target="_blank">Live Space ↗</a>
+                        <span class="link-sep">|</span>
+                        <a href="https://trinadhsriram02-autonomoussoc-api.hf.space" class="code-link" target="_blank">Production API ↗</a>
                     </div>
                 </div>
-                <p class="project-desc">
-                    Engineered an autonomous Security Operations Center API designed for real-time threat detection and contextual event parsing. Built to offload cognitive strain from security analysts by programmatically evaluating incoming system telemetry.
-                </p>
+                <p class="tech-stack-line">LangGraph, LangChain, Groq, LLaMA 3.1 8B, ChromaDB RAG, MITRE ATT&CK, FastAPI, asyncio, SQLite (WAL), PyJWT, Docker, Hugging Face, Streamlit</p>
                 <ul class="spec-list">
-                    <li>Developed asynchronous endpoint structures handling heavy log streams without performance degradation.</li>
-                    <li>Integrated custom Hugging Face inference endpoints to pipeline multi-class threat classification layers directly into the API flow.</li>
-                    <li>Designed rigid API contract schemas ensuring zero structural data mutations during high-velocity event processing.</li>
+                    <li>Architected a policy-based LangGraph ReAct agent (state-observation-action selection loop) integrating AbuseIPDB, NIST NVD, and ChromaDB MITRE ATT&CK RAG to slash triage latency by 97% (20 minutes down to sub-30 seconds per alert).</li>
+                    <li>Built a unified end-to-end pipeline handling raw ingestion, semantic feature engineering via Sentence Transformers, structured Pydantic token parsing, and an 85% confidence-gated automated remediation execution layer.</li>
+                    <li>Validated core inference engine reliability against a labeled 20-alert production benchmark, achieving 94% precision, 91% recall, and a 0.92 F1 score serving as an automated retraining trigger baseline.</li>
+                    <li>Engineered an event-driven async task queue utilizing asyncio.Queue and ThreadPoolExecutor, allowing 5 concurrent multi-step agent operations under sub-0.1s dispatch to eliminate edge execution timeouts.</li>
+                    <li>Secured system surfaces via cryptographic JWT-RBAC infrastructure, SHA-256 salted hashing patterns, and timing-attack resistant hmac verification while writing comprehensive unit/integration test parameters in Pytest.</li>
+                    <li>Diagnosed system out-of-memory (OOM) faults via cloud platform logging and successfully re-architected deployment profiles into a 16 GB RAM serverless container environment to preserve 100% operational uptime at zero cost overhead.</li>
                 </ul>
             </div>
 
-            <!-- Project 2 -->
+            <!-- System 2: ModelSentinel -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3 class="project-title">ModelSentinel</h3>
+                    <h3 class="project-title">ModelSentinel — ML Supply-Chain Governance Scanner</h3>
                     <div class="project-links">
-                        <a href="https://github.com/trinadhsriram02/ModelSentinel" class="code-link" target="_blank">Codebase ↗</a>
+                        <a href="https://github.com/trinadhsriram02/modelsentinel" class="code-link" target="_blank">Codebase ↗</a>
+                        <span class="link-sep">|</span>
+                        <a href="https://huggingface.co/spaces/trinadhsriram02/ModelSentinel" class="code-link" target="_blank">Live Space ↗</a>
+                        <span class="link-sep">|</span>
+                        <a href="https://trinadhsriram02-modelsentinel-api.hf.space" class="code-link" target="_blank">Production API ↗</a>
                     </div>
                 </div>
-                <p class="project-desc">
-                    An advanced evaluation and operational guardrail system constructed to monitor machine learning models against data drift, input anomalies, and adversarial vectors before they hit critical application layers.
-                </p>
+                <p class="tech-stack-line">PyTorch, Scikit-learn (sklearn), NumPy, Pandas, FastAPI, Docker, GitHub Actions CI/CD, Hugging Face, SQLite (WAL), Pydantic</p>
                 <ul class="spec-list">
-                    <li>Constructed real-time evaluation logic tracking statistical drift and structural out-of-distribution metrics.</li>
-                    <li>Decoupled observation layers from core execution routines to ensure minimal telemetry overhead on parent runtime engines.</li>
-                </ul>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-header">
-                    <h3 class="project-title">Bank Loan Risk Analysis Dashboard</h3>
-                    <div class="project-links">
-                        <a href="https://github.com/trinadhsriram02/loan-risk-analysis" class="code-link" target="_blank">Codebase ↗</a>
-                    </div>
-                </div>
-                <p class="project-desc">
-                    A data-driven analytics engine built to ingest deep portfolio data, isolate default indicators, and expose risk matrices via an optimized visualization interface.
-                </p>
-                <ul class="spec-list">
-                    <li>Transformed disparate historical financial metrics into explicit feature pipelines optimized for risk profiling.</li>
-                    <li>Designed granular analytical interfaces focusing on high data density over visual noise to maximize decision speed.</li>
+                    <li>Achieved 100% backdoor-detection accuracy by constructing an ensemble machine learning evaluation engine implementing Neural Cleanse (MAD outliers) and Activation Clustering (silhouette scoring methodologies).</li>
+                    <li>Shipped a native GitHub Actions CI/CD governance automation pipeline to systematically scan PyTorch weights on repository commits, programmatically blocking deployment tracks on security threshold breaches.</li>
+                    <li>Conducted deep A/B-style threshold sensitivity configurations across multiple testing layouts to accurately map validation limits and output automated retraining trigger frameworks.</li>
+                    <li>Eliminated critical Remote Code Execution vulnerabilities by enforcing weight restriction policies via torch.load configuration parameters, replacing raw regex routines with rigid structural Pydantic layers.</li>
+                    <li>Optimized system container footprint and build efficiency by 80% (dropping execution cycles from 15 down to 3 minutes) via CPU-optimized vector layers, matrix routines, and WAL-mode multi-threading support.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Technical Capabilities -->
+        <!-- Technical Skill Infrastructure Matrix -->
         <section class="section capabilities-section">
-            <h2 class="section-title">Core Competencies</h2>
+            <h2 class="section-title">Technical Skills & System Competencies</h2>
             <table class="tech-table">
                 <tr>
-                    <td class="tech-label">Languages & Core</td>
-                    <td class="tech-values">Python, SQL, HTML5, CSS3, Data Structures & Algorithms</td>
+                    <td class="tech-label">Core & Infrastructure</td>
+                    <td class="tech-values">Python, SQL, Data Structures & Algorithms, Object-Oriented Programming (OOP), System Design, Technical Documentation, Git, Docker, GitHub Actions (CI/CD), GCP</td>
                 </tr>
                 <tr>
-                    <td class="tech-label">ML & Infrastructure</td>
-                    <td class="tech-values">Machine Learning, Git, GitHub Pages, Hugging Face API Integration</td>
+                    <td class="tech-label">ML & AI Engineering</td>
+                    <td class="tech-values">PyTorch, Scikit-learn (sklearn), NumPy, Pandas, LangGraph, LangChain, Reinforcement Learning Principles, Retrieval-Augmented Generation (RAG), Sentence Transformers, Vertex AI, Gemini API</td>
                 </tr>
                 <tr>
-                    <td class="tech-label">Methodologies</td>
-                    <td class="tech-values">API Design, Asynchronous Processing, Feature Engineering, Risk Modeling</td>
+                    <td class="tech-label">Workflows & Architectures</td>
+                    <td class="tech-values">Data Ingestion, Feature Engineering, Model Training & Validation, Model Serving, Model Monitoring, Drift Detection, Model Observability, Threshold Tuning, Automated Retraining Pipelines, Model Governance</td>
+                </tr>
+                <tr>
+                    <td class="tech-label">Backend Architecture</td>
+                    <td class="tech-values">FastAPI, RESTful API Design, Asyncio (Event-Driven Processing), Pydantic Data Verification, OAuth2, JWT, RBAC, ThreadPoolExecutor, Serverless Deployments, SQLite (WAL Mode), MySQL, ChromaDB</td>
+                </tr>
+                <tr>
+                    <td class="tech-label">Testing & Quality</td>
+                    <td class="tech-values">Unit Testing, Integration Testing, Pytest, Regression Validation, Peer Code Review, Technical Architecture Specifications</td>
                 </tr>
             </table>
         </section>
 
-        <!-- Education Footer -->
+        <!-- Professional Track Timeline -->
+        <section class="section history-section">
+            <h2 class="section-title">Professional History</h2>
+            
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-company">Independent AI/ML Engineer</span>
+                    <span class="job-date">Jan 2026 — Present</span>
+                </div>
+                <p class="job-sub">Production Open-Source Architecture Development</p>
+                <p class="job-summary">Designed, built, and containerized scalable machine learning pipelines, custom API frameworks, model verification scanners, and asynchronous task layers while assuming complete technical design authority.</p>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-company">Deloitte Australia (Industry Simulation)</span>
+                    <span class="job-date">July 2025</span>
+                </div>
+                <p class="job-sub">Cybersecurity Analyst & Data Analyst Tracks</p>
+                <p class="job-summary">Executed programmatic, log-based threat triage on large web telemetry infrastructure logs to pinpoint adversarial behaviors. Designed high-density Tableau data metrics and automated spreadsheet analytics profiles to process forensic engagement datasets.</p>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-company">Brainovision Solutions India Pvt. Ltd.</span>
+                    <span class="job-date">May 2023 — June 2023</span>
+                </div>
+                <p class="job-sub">Software Engineering Intern (Remote)</p>
+                <p class="job-summary">Constructed responsive, modern web infrastructure layers utilizing custom HTML5, CSS3, and core JavaScript. Interfaced front-end layout elements cleanly with underlying enterprise RESTful backend application routes using strict version control systems.</p>
+            </div>
+        </section>
+
+        <!-- Educational Foundation & Credentials -->
+        <section class="section education-section">
+            <h2 class="section-title">Education & Technical Credentials</h2>
+            <div class="edu-block">
+                <div class="edu-header">
+                    <span class="edu-school">Narayana Engineering College (Autonomous), Nellore</span>
+                    <span class="edu-date">Graduated June 2025</span>
+                </div>
+                <p class="edu-degree">Bachelor of Technology in Computer Science and Engineering — First Class with Distinction (CGPA: 7.77)</p>
+            </div>
+
+            <div class="certifications-block">
+                <h3 class="cert-title">Verified Certifications</h3>
+                <ul class="cert-list">
+                    <li><strong>Google Cloud Skills Boost:</strong> Prompt Design in Vertex AI; Google Cloud Essentials; Build Real-World AI Applications with Gemini and Imagen</li>
+                    <li><strong>DeepLearning.AI:</strong> LangChain for LLM Application Development; Functions, Tools and Agents with LangChain; Building Systems with the ChatGPT API; ChatGPT Prompt Engineering</li>
+                    <li><strong>Cisco Networking Academy:</strong> Cyber Threat Management, Introduction to Cybersecurity, Python Essentials 1 & 2</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Formal Executive Footer -->
         <footer class="executive-footer">
-            <p>B.Tech in Computer Science and Engineering — Narayana Engineering College</p>
+            <p>Trinadh Sriram © 2026. Built with framework-free, high-performance static architecture.</p>
         </footer>
     </main>
 </body>

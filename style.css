@@ -1,12 +1,12 @@
-/* --- Root Setup & System Typography --- */
+/* --- Core Variables & Presentation Parameters --- */
 :root {
-    --bg-color: #fcfcfc;
-    --text-primary: #111111;
-    --text-muted: #555555;
-    --accent: #0066cc;
-    --border-color: #e0e0e0;
-    --max-width: 720px;
-    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --bg-main: #fcfcfc;
+    --text-dark: #111111;
+    --text-subtle: #4c4c4c;
+    --accent-blue: #005bb5;
+    --border-gray: #e5e5e5;
+    --content-width: 760px;
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
@@ -16,115 +16,126 @@
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-stack);
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: var(--font-system);
     line-height: 1.6;
     font-size: 15px;
-    padding: 60px 20px;
+    padding: 50px 24px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: var(--max-width);
+    max-width: var(--content-width);
     margin: 0 auto;
 }
 
-/* --- Executive Header Layout --- */
+/* --- Executive Typography Header --- */
 .executive-header {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .name {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--text-primary);
-    margin-bottom: 4px;
+    color: var(--text-dark);
+    margin-bottom: 2px;
 }
 
 .role {
-    font-size: 1.1rem;
-    color: var(--text-muted);
+    font-size: 1.15rem;
+    color: var(--text-subtle);
     font-weight: 400;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .meta-links {
     font-size: 0.9rem;
+    margin-bottom: 4px;
 }
 
 .meta-links a {
-    color: var(--text-muted);
+    color: var(--text-dark);
     text-decoration: none;
-    border-bottom: 1px dashed transparent;
-    transition: all 0.2s ease;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
 }
 
 .meta-links a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
 }
 
 .separator {
-    color: #ccc;
+    color: #cccccc;
     margin: 0 8px;
+}
+
+.location-tag {
+    font-size: 0.85rem;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-top: 4px;
 }
 
 .divider {
     border: 0;
     height: 1px;
-    background-color: var(--border-color);
-    margin: 30px 0;
+    background-color: var(--border-gray);
+    margin: 25px 0 35px 0;
 }
 
-/* --- Core Structure Styles --- */
+/* --- Structural Base Sections --- */
 .section {
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 .section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-primary);
-    margin-bottom: 20px;
-    border-bottom: 1px solid var(--text-primary);
-    padding-bottom: 5px;
+    letter-spacing: 0.06em;
+    color: var(--text-dark);
+    margin-bottom: 22px;
+    border-bottom: 1px solid var(--text-dark);
+    padding-bottom: 4px;
 }
 
 .narrative {
     font-size: 1.05rem;
-    color: #222;
+    color: #222222;
     text-align: justify;
 }
 
-/* --- Project Block Architectures --- */
+/* --- System Design Cards --- */
 .project-card {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .project-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
 }
 
 .project-links {
     font-size: 0.85rem;
+    white-space: nowrap;
 }
 
 .code-link {
-    color: var(--accent);
+    color: var(--accent-blue);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .code-link:hover {
@@ -132,44 +143,49 @@ body {
 }
 
 .link-sep {
-    color: #ccc;
-    margin: 0 5px;
+    color: #dddddd;
+    margin: 0 4px;
 }
 
-.project-desc {
-    color: var(--text-muted);
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+.tech-stack-line {
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.85rem;
+    color: #555555;
+    background-color: #f3f3f3;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    display: inline-block;
 }
 
 .spec-list {
     list-style-type: none;
-    padding-left: 12px;
+    padding-left: 14px;
 }
 
 .spec-list li {
     position: relative;
-    margin-bottom: 4px;
-    color: #333;
+    margin-bottom: 6px;
+    color: #2c2c2c;
     font-size: 0.95rem;
+    text-align: justify;
 }
 
 .spec-list li::before {
     content: "—";
     position: absolute;
-    left: -12px;
-    color: #aaa;
+    left: -14px;
+    color: #bbbbbb;
 }
 
-/* --- Technical Infrastructure Grid/Table --- */
+/* --- Matrix / Tables Infrastructure --- */
 .tech-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
 }
 
 .tech-table tr {
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-gray);
 }
 
 .tech-table tr:last-child {
@@ -177,29 +193,92 @@ body {
 }
 
 .tech-table td {
-    padding: 10px 0;
+    padding: 12px 0;
     vertical-align: top;
 }
 
 .tech-label {
-    width: 30%;
-    font-weight: 600;
-    color: var(--text-primary);
+    width: 25%;
+    font-weight: 700;
+    color: var(--text-dark);
     font-size: 0.9rem;
 }
 
 .tech-values {
-    width: 70%;
-    color: var(--text-muted);
+    width: 75%;
+    color: var(--text-subtle);
     font-size: 0.9rem;
 }
 
-/* --- Footer Infrastructure --- */
+/* --- Professional History Track --- */
+.job-block, .edu-block {
+    margin-bottom: 24px;
+}
+
+.job-header, .edu-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 2px;
+}
+
+.job-company, .edu-school {
+    color: var(--text-dark);
+}
+
+.job-date, .edu-date {
+    color: var(--text-subtle);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.job-sub, .edu-degree {
+    font-style: italic;
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.job-summary {
+    font-size: 0.95rem;
+    color: var(--text-subtle);
+}
+
+/* --- Certifications Display Layers --- */
+.certifications-block {
+    margin-top: 25px;
+    background-color: #fafafa;
+    border: 1px solid var(--border-gray);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.cert-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.cert-list {
+    list-style-type: square;
+    padding-left: 18px;
+}
+
+.cert-list li {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+    margin-bottom: 6px;
+}
+
+/* --- Document Footnotes --- */
 .executive-footer {
-    margin-top: 60px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
+    margin-top: 70px;
+    border-top: 1px solid var(--border-gray);
+    padding-top: 25px;
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: #777777;
     text-align: center;
 }
