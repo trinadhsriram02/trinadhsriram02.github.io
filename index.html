@@ -1,151 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trinadh Sriram | AI/ML Software Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Trinadh Sriram, an AI/ML Software Engineer building production-grade machine learning workflows.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0d1117', /* GitHub Dark Base */
+                        surface: '#161b22', /* GitHub Dark Surface */
+                        border: '#30363d',
+                        primary: '#c9d1d9',
+                        secondary: '#8b949e',
+                        accent: '#58a6ff'
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(13, 17, 23, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(88, 166, 255, 0.3);
+            box-shadow: 0 0 30px -10px rgba(88, 166, 255, 0.15);
+        }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glow-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(88, 166, 255, 0.15) 0%, transparent 50%);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-background text-secondary font-sans antialiased selection:bg-accent/20 selection:text-white overflow-x-hidden">
 
-    <header class="header">
-        <div class="container">
-            <h1>Trinadh Sriram</h1>
-            <h2>AI/ML Software Engineer</h2>
-            <p class="summary">
-                Software Engineer with 2+ years of progressive experience owning end-to-end ML workflows: data ingestion, feature engineering, model training and validation, model serving, model monitoring, drift detection, observability, and CI/CD-gated cloud deployment. Targeting AI/ML engineering roles focused on production-grade systems.
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-primary font-semibold tracking-tight text-lg flex items-center gap-2 group">
+                <span class="bg-accent text-background text-xs font-bold px-1.5 py-0.5 rounded-md group-hover:scale-110 transition-transform">TS</span>
+                <span>Trinadh Sriram</span>
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Systems</a>
+                <a href="#skills" class="hover:text-white transition-colors">Arsenal</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="mailto:trinadhsriramjob@gmail.com" class="px-4 py-2 bg-accent text-background font-bold rounded-full hover:bg-blue-400 transition-colors">Contact Me</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-surface border-b border-border p-6 flex flex-col gap-4 md:hidden">
+            <a href="#projects" class="block hover:text-white">Systems</a>
+            <a href="#skills" class="block hover:text-white">Arsenal</a>
+            <a href="#experience" class="block hover:text-white">Experience</a>
+            <a href="mailto:trinadhsriramjob@gmail.com" class="block text-accent font-semibold">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="relative min-h-screen flex flex-col justify-center items-center text-center pt-20 px-6 bg-grid">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] glow-bg opacity-80 pointer-events-none"></div>
+
+        <div class="animate-slide-up space-y-8 max-w-4xl relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-white backdrop-blur-sm">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                </span>
+                Targeting AI/ML Engineering Roles
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[1.1]">
+                I architect and deploy <br class="hidden md:block" />
+                <span class="text-accent">production ML systems.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+                2+ years of progressive experience owning end-to-end ML workflows: data ingestion, feature engineering, drift detection, observability, and CI/CD-gated cloud deployment.
             </p>
-            <div class="contact-links">
-                <a href="mailto:trinadhsriramjob@gmail.com">trinadhsriramjob@gmail.com</a>
-                <a href="https://linkedin.com/in/trinadh-sriram" target="_blank">LinkedIn</a>
-                <a href="https://github.com/trinadhsriram02" target="_blank">GitHub</a>
-                <span>Tirupati, AP (+91-9391738259)</span>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+                <a href="#projects" class="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-neutral-200 transition-all flex items-center gap-2">
+                    View Architecture
+                    <span class="iconify" data-icon="lucide:arrow-right" data-width="18"></span>
+                </a>
+                <div class="flex gap-4 sm:ml-4">
+                    <a href="https://github.com/trinadhsriram02" target="_blank" class="p-3 text-secondary hover:text-white transition-colors" aria-label="GitHub">
+                        <span class="iconify" data-icon="lucide:github" data-width="24"></span>
+                    </a>
+                    <a href="https://linkedin.com/in/trinadh-sriram" target="_blank" class="p-3 text-secondary hover:text-white transition-colors" aria-label="LinkedIn">
+                        <span class="iconify" data-icon="lucide:linkedin" data-width="24"></span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
-
-    <main class="container">
         
-        <section class="section">
-            <h3 class="section-title">Production Architectures</h3>
-            
-            <article class="item">
-                <div class="item-header">
-                    <h4>AutonomousSOC — Policy-Based LLM Agent</h4>
-                    <div class="item-links">
-                        <a href="https://github.com/trinadhsriram02/autonomous-soc" target="_blank">[Code]</a>
-                        <a href="https://huggingface.co/spaces/trinadhsriram02/AutonomousSOC" target="_blank">[App]</a>
-                        <a href="https://trinadhsriram02-autonomoussoc-api.hf.space" target="_blank">[API]</a>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+            <span class="iconify text-white" data-icon="lucide:chevron-down" data-width="24"></span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 relative border-t border-white/5 bg-surface/30">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="space-y-2">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">Production Architectures</h2>
+                <p class="text-secondary">Measurable engineering impact driven by the CAR (Challenge, Action, Result) methodology.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- AutonomousSOC -->
+                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-accent transition-colors p-8 card-hover">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="p-2 rounded-lg bg-blue-500/10 text-accent border border-blue-500/20">
+                                    <span class="iconify" data-icon="lucide:shield-check" data-width="24"></span>
+                                </span>
+                                <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">AutonomousSOC</h3>
+                            </div>
+                            <p class="text-sm font-mono text-secondary">Policy-Based LLM Agent</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/trinadhsriram02/autonomous-soc" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-white"><span class="iconify" data-icon="lucide:github" data-width="20"></span></a>
+                            <a href="https://huggingface.co/spaces/trinadhsriram02/AutonomousSOC" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-accent"><span class="iconify" data-icon="lucide:external-link" data-width="20"></span></a>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-primary mb-6">
+                        <li><strong class="text-white">Challenge:</strong> Manual security triage created bottlenecks, requiring 20 mins per alert.</li>
+                        <li><strong class="text-white">Action:</strong> Architected a LangGraph ReAct agent integrated with AbuseIPDB & MITRE ATT&CK RAG. Built an asyncio event queue and secured via JWT-RBAC.</li>
+                        <li><strong class="text-white">Result:</strong> Slashed latency by 97% (<30 sec/alert) at 94% precision. Diagnosed OOM faults and migrated to serverless with zero cost overhead.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">LangGraph</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">FastAPI</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">ChromaDB</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">Docker</span>
+                    </div>
+                </article>
+
+                <!-- ModelSentinel -->
+                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-emerald-500 transition-colors p-8 card-hover">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                    <span class="iconify" data-icon="lucide:network" data-width="24"></span>
+                                </span>
+                                <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">ModelSentinel</h3>
+                            </div>
+                            <p class="text-sm font-mono text-secondary">ML Governance Scanner</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://github.com/trinadhsriram02/modelsentinel" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-white"><span class="iconify" data-icon="lucide:github" data-width="20"></span></a>
+                            <a href="https://huggingface.co/spaces/trinadhsriram02/ModelSentinel" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-emerald-400"><span class="iconify" data-icon="lucide:external-link" data-width="20"></span></a>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-primary mb-6">
+                        <li><strong class="text-white">Challenge:</strong> Risk of deploying backdoored AI assets into production environments.</li>
+                        <li><strong class="text-white">Action:</strong> Built a CI/CD governance pipeline via Neural Cleanse. Replaced regex parsing with Pydantic and enforced strict load parameters to stop RCE.</li>
+                        <li><strong class="text-white">Result:</strong> Achieved 100% backdoor-detection accuracy to automate deployment blocks. Cut Docker build times by 80% using CPU-only wheels.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">PyTorch</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">Sklearn</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">CI/CD</span>
+                        <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">Pydantic</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Bento Grid) -->
+    <section id="skills" class="py-24 px-6 relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="space-y-2">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">Technical Arsenal</h2>
+                <p class="text-secondary">The underlying infrastructure and frameworks I use to ship robust code.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Core ML Card -->
+                <div class="group p-8 rounded-2xl bg-surface border border-border card-hover relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-2 rounded-lg bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                            <span class="iconify" data-icon="lucide:cpu" data-width="24"></span>
+                        </span>
+                        <h3 class="text-xl font-medium text-white">Core ML & Data</h3>
+                    </div>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Python & SQL</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> PyTorch & Scikit-learn</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> NumPy & Pandas</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Data Structures & OOP</li>
+                    </ul>
+                </div>
+
+                <!-- GenAI Card -->
+                <div class="group p-8 rounded-2xl bg-surface border border-border card-hover relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-2 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                            <span class="iconify" data-icon="lucide:brain-circuit" data-width="24"></span>
+                        </span>
+                        <h3 class="text-xl font-medium text-white">GenAI & LLMs</h3>
+                    </div>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> LangGraph & LangChain</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> RAG Architectures</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Gemini & Vertex AI</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Sentence Transformers</li>
+                    </ul>
+                </div>
+
+                <!-- Backend/DevOps Card -->
+                <div class="group p-8 rounded-2xl bg-surface border border-border card-hover relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="p-2 rounded-lg bg-blue-500/10 text-accent border border-blue-500/20">
+                            <span class="iconify" data-icon="lucide:terminal" data-width="24"></span>
+                        </span>
+                        <h3 class="text-xl font-medium text-white">Backend & Ops</h3>
+                    </div>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> FastAPI & asyncio</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Docker & HuggingFace</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> GitHub Actions (CI/CD)</li>
+                        <li class="flex items-center gap-2 text-primary"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> JWT & OAuth2 Security</li>
+                    </ul>
+                </div>
+
+                <!-- Workflows Wide Card -->
+                <div class="group p-8 rounded-2xl bg-surface border border-border card-hover relative overflow-hidden lg:col-span-3">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                    <span class="iconify" data-icon="lucide:git-commit" data-width="24"></span>
+                                </span>
+                                <h3 class="text-xl font-medium text-white">ML Workflows & Pipelines</h3>
+                            </div>
+                            <p class="text-sm leading-relaxed mb-4 text-primary">Extensive experience managing the entire ML lifecycle. From raw data ingestion and feature engineering to model serving, drift detection, and automated retraining triggers.</p>
+                        </div>
+                        <div class="flex-1 border-l border-white/5 pl-0 md:pl-8">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="p-2 rounded-lg bg-neutral-500/10 text-neutral-400 border border-neutral-500/20">
+                                    <span class="iconify" data-icon="lucide:database" data-width="24"></span>
+                                </span>
+                                <h3 class="text-xl font-medium text-white">Databases & Storage</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 text-sm font-mono text-primary">
+                                <div class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:server"></span> SQLite (WAL Mode)</div>
+                                <div class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:server"></span> ChromaDB (Vector)</div>
+                                <div class="flex items-center gap-2"><span class="iconify text-secondary" data-icon="lucide:cloud"></span> GCP Storage</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="tech-stack">LangGraph | FastAPI | ChromaDB | LLaMA 3.1 8B | Docker | PyJWT</div>
-                <ul class="bullets">
-                    <li><strong>Challenge:</strong> Manual security alert triage created critical operational bottlenecks, requiring 20 minutes of human analyst time per alert and risking delayed incident response.</li>
-                    <li><strong>Action:</strong> Architected an autonomous LangGraph ReAct agent integrated with AbuseIPDB, NIST NVD, and MITRE ATT&CK RAG. Engineered an asyncio event-driven task queue to process concurrent investigations and secured system surfaces via JWT-RBAC and SHA-256 hashing.</li>
-                    <li><strong>Result:</strong> Slashed triage latency by 97% (from 20 minutes to <30 seconds per alert) while maintaining 94% precision. Diagnosed and resolved a production OOM fault, migrating the architecture to a serverless environment to preserve 100% uptime at zero additional infrastructure cost.</li>
-                </ul>
-            </article>
 
-            <article class="item">
-                <div class="item-header">
-                    <h4>ModelSentinel — ML Supply-Chain Governance Scanner</h4>
-                    <div class="item-links">
-                        <a href="https://github.com/trinadhsriram02/modelsentinel" target="_blank">[Code]</a>
-                        <a href="https://huggingface.co/spaces/trinadhsriram02/ModelSentinel" target="_blank">[App]</a>
-                        <a href="https://trinadhsriram02-modelsentinel-api.hf.space" target="_blank">[API]</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education Section -->
+    <section id="experience" class="py-24 px-6 border-t border-white/5 bg-surface/30">
+        <div class="max-w-4xl mx-auto space-y-16">
+            
+            <!-- Work Experience -->
+            <div>
+                <h2 class="text-3xl font-semibold text-white tracking-tight mb-12">Professional Experience</h2>
+                <div class="relative border-l border-white/10 ml-3 space-y-12">
+                    
+                    <div class="relative pl-10 group">
+                        <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-white ring-4 ring-background group-hover:bg-accent transition-colors"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Independent AI/ML Engineer - Production Systems</h3>
+                            <span class="text-sm font-mono text-accent">Jan 2026 – Present</span>
+                        </div>
+                        <p class="text-sm text-secondary leading-relaxed max-w-2xl mt-3">
+                            Designed, built, and deployed end-to-end production AI/ML systems independently, owning the architecture, data pipelines, ML model implementation, API serving, CI/CD, and serverless cloud deployments.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-10 group">
+                        <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-border ring-4 ring-background group-hover:bg-accent transition-colors"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Cybersecurity & Data Analyst (Simulation)</h3>
+                            <span class="text-sm font-mono text-secondary">July 2025</span>
+                        </div>
+                        <div class="text-md text-primary mb-2">Deloitte Australia</div>
+                        <p class="text-sm text-secondary leading-relaxed max-w-2xl">
+                            Identified suspicious behavior via log-based threat analysis on web datasets, supporting breach-responses using SOC triage methodology. Built Tableau dashboards to derive forensic business conclusions.
+                        </p>
+                    </div>
+
+                    <div class="relative pl-10 group">
+                        <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-border ring-4 ring-background group-hover:bg-accent transition-colors"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-white">Software Engineering Intern</h3>
+                            <span class="text-sm font-mono text-secondary">May 2023 – June 2023</span>
+                        </div>
+                        <div class="text-md text-primary mb-2">Brainovision Solutions India</div>
+                        <p class="text-sm text-secondary leading-relaxed max-w-2xl">
+                            Developed responsive web interfaces utilizing HTML5, CSS3, and JavaScript. Integrated RESTful APIs with backend services while applying strict Git-based version control and Agile/SDLC practices.
+                        </p>
                     </div>
                 </div>
-                <div class="tech-stack">PyTorch | Scikit-learn | GitHub Actions CI/CD | FastAPI | Pydantic</div>
-                <ul class="bullets">
-                    <li><strong>Challenge:</strong> Supply-chain vulnerabilities in machine learning models presented a severe risk of deploying backdoored or poisoned AI assets directly into production environments.</li>
-                    <li><strong>Action:</strong> Built a CI/CD governance pipeline utilizing Neural Cleanse and Activation Clustering to scan all PyTorch model pushes. Replaced fragile regex parsing with Pydantic structured outputs and enforced strict loading parameters to eliminate RCE vulnerabilities.</li>
-                    <li><strong>Result:</strong> Achieved 100% backdoor-detection accuracy, automating the deployment block of compromised models. Optimized Docker image builds via CPU-only wheels, cutting build times by 80% (from 15 minutes to 3 minutes).</li>
-                </ul>
-            </article>
-        </section>
+            </div>
 
-        <section class="section">
-            <h3 class="section-title">Professional Experience</h3>
-            
-            <article class="item">
-                <div class="item-header">
-                    <h4>Independent AI/ML Engineer - Production Systems</h4>
-                    <span>Jan 2026 - Present</span>
-                </div>
-                <ul class="bullets">
-                    <li>Designed, built, and deployed two end-to-end production AI/ML systems independently, owning architecture, data pipelines, ML model implementation, API serving, CI/CD, security, cloud deployment, and technical documentation.</li>
-                </ul>
-            </article>
+            <!-- Education -->
+            <div>
+                <h2 class="text-2xl font-semibold text-white tracking-tight mb-8 pt-8 border-t border-border">Education & Certifications</h2>
+                <div class="relative border-l border-white/10 ml-3 space-y-8">
+                    <div class="relative pl-10 group">
+                        <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-border ring-4 ring-background group-hover:bg-emerald-400 transition-colors"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-lg font-bold text-white">B.Tech in Computer Science and Engineering</h3>
+                            <span class="text-sm font-mono text-secondary">June 2025</span>
+                        </div>
+                        <div class="text-md text-primary mb-2">Narayana Engineering College, Nellore</div>
+                        <p class="text-sm text-accent font-mono">CGPA: 7.77 (First Class with Distinction)</p>
+                    </div>
 
-            <article class="item">
-                <div class="item-header">
-                    <h4>Cybersecurity Analyst & Data Analyst (Simulation)</h4>
-                    <span>July 2025</span>
-                </div>
-                <p class="sub-text">Deloitte Australia (Forage Industry Simulation)</p>
-                <ul class="bullets">
-                    <li>Identified suspicious user behavior by performing log-based threat analysis on web activity datasets, supporting a breach-response investigation using industry-standard SOC triage methodology.</li>
-                    <li>Built a Tableau dashboard and applied Excel-based classification to derive business conclusions from forensic datasets.</li>
-                </ul>
-            </article>
-
-            <article class="item">
-                <div class="item-header">
-                    <h4>Software Engineering Intern</h4>
-                    <span>May 2023 - June 2023</span>
-                </div>
-                <p class="sub-text">Brainovision Solutions India Pvt. Ltd. (Remote)</p>
-                <ul class="bullets">
-                    <li>Developed responsive, cross-browser-compatible web interfaces utilizing HTML5, CSS3, and JavaScript.</li>
-                    <li>Integrated RESTful APIs with backend services while applying Git-based version control and Agile/SDLC practices across the development lifecycle.</li>
-                </ul>
-            </article>
-        </section>
-
-        <section class="section">
-            <h3 class="section-title">Technical Competencies</h3>
-            <div class="skills-grid">
-                <div>
-                    <strong>Languages & Core ML</strong>
-                    <p>Python, SQL, PyTorch, Scikit-learn, NumPy, Pandas, DSA, OOP, System Design.</p>
-                </div>
-                <div>
-                    <strong>Generative AI & LLMs</strong>
-                    <p>LangGraph, LangChain, RAG, Sentence Transformers, Vertex AI, Gemini, Reinforcement Learning Principles.</p>
-                </div>
-                <div>
-                    <strong>ML Workflows</strong>
-                    <p>Feature Engineering, Model Training/Serving, A/B Evaluation, Drift Detection, Automated Retraining.</p>
-                </div>
-                <div>
-                    <strong>Backend & Cloud Infrastructure</strong>
-                    <p>FastAPI, asyncio, Docker, GitHub Actions, GCP, HuggingFace, SQLite (WAL), ChromaDB, OAuth2, JWT.</p>
+                    <div class="relative pl-10 group">
+                        <div class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-border ring-4 ring-background group-hover:bg-emerald-400 transition-colors"></div>
+                        <h3 class="text-lg font-bold text-white mb-3">Verified Industry Credentials</h3>
+                        <ul class="space-y-2 text-sm text-secondary list-disc ml-4">
+                            <li><strong>Google Cloud:</strong> Prompt Design in Vertex AI; Build AI Apps with Gemini (Aug 2025)</li>
+                            <li><strong>DeepLearning.AI:</strong> LangChain for LLM Development; Agents; Prompt Engineering</li>
+                            <li><strong>Cisco:</strong> Cyber Threat Management; Python Essentials 1 & 2</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="section">
-            <h3 class="section-title">Education & Certifications</h3>
-            
-            <article class="item">
-                <div class="item-header">
-                    <h4>B.Tech in Computer Science and Engineering</h4>
-                    <span>Graduated June 2025</span>
-                </div>
-                <p class="sub-text">Narayana Engineering College, Nellore, Andhra Pradesh</p>
-                <p class="sub-text"><strong>CGPA:</strong> 7.77 (First Class with Distinction)</p>
-            </article>
+        </div>
+    </section>
 
-            <div class="certifications">
-                <strong>Verified Credentials:</strong>
-                <ul class="bullets">
-                    <li><strong>Google Cloud:</strong> Prompt Design in Vertex AI; Build Real-World AI Applications with Gemini (Aug 2025)</li>
-                    <li><strong>DeepLearning.AI:</strong> LangChain for LLM App Development; Agents with LangChain; ChatGPT Prompt Engineering</li>
-                    <li><strong>Cisco Networking Academy:</strong> Cyber Threat Management; Introduction to Cybersecurity; Python Essentials 1 & 2</li>
-                </ul>
-            </div>
-        </section>
+    <!-- Footer -->
+    <footer class="py-12 text-center text-sm font-mono text-secondary border-t border-white/5 bg-background">
+        <p>&copy; 2026 Trinadh Sriram. Engineered for Scale.</p>
+        <p class="mt-2 text-xs">Tirupati, Andhra Pradesh | +91-9391738259</p>
+    </footer>
 
-    </main>
+    <!-- Animations Script -->
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('opacity-0');
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
