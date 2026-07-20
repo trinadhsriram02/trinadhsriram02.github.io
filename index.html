@@ -28,22 +28,17 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
-                        background: '#0d1117', /* GitHub Dark Base */
-                        surface: '#161b22', /* GitHub Dark Surface */
+                        background: '#0d1117', 
+                        surface: '#161b22', 
                         border: '#30363d',
                         primary: '#c9d1d9',
                         secondary: '#8b949e',
                         accent: '#58a6ff'
                     },
                     animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
                         'slide-up': 'slideUp 0.7s ease-out forwards',
                     },
                     keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
                         slideUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -91,7 +86,7 @@
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#projects" class="hover:text-white transition-colors">Systems</a>
-                <a href="#skills" class="hover:text-white transition-colors">Arsenal</a>
+                <a href="#skills" class="hover:text-white transition-colors">Skills</a>
                 <a href="#experience" class="hover:text-white transition-colors">Experience</a>
                 <a href="mailto:trinadhsriramjob@gmail.com" class="px-4 py-2 bg-accent text-background font-bold rounded-full hover:bg-blue-400 transition-colors">Contact Me</a>
             </div>
@@ -105,7 +100,7 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-surface border-b border-border p-6 flex flex-col gap-4 md:hidden">
             <a href="#projects" class="block hover:text-white">Systems</a>
-            <a href="#skills" class="block hover:text-white">Arsenal</a>
+            <a href="#skills" class="block hover:text-white">Skills</a>
             <a href="#experience" class="block hover:text-white">Experience</a>
             <a href="mailto:trinadhsriramjob@gmail.com" class="block text-accent font-semibold">Contact Me</a>
         </div>
@@ -115,7 +110,13 @@
     <section id="about" class="relative min-h-screen flex flex-col justify-center items-center text-center pt-20 px-6 bg-grid">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] glow-bg opacity-80 pointer-events-none"></div>
 
-        <div class="animate-slide-up space-y-8 max-w-4xl relative z-10">
+        <div class="animate-slide-up space-y-6 max-w-4xl relative z-10">
+            
+            <!-- Profile Picture Injection -->
+            <div class="mb-6">
+                <img src="photo.jpg" alt="Trinadh Sriram" class="w-36 h-36 md:w-44 md:h-44 rounded-full border-4 border-surface shadow-[0_0_30px_rgba(88,166,255,0.2)] object-cover mx-auto">
+            </div>
+
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-white backdrop-blur-sm">
                 <span class="relative flex h-2 w-2">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
@@ -164,27 +165,31 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- AutonomousSOC -->
-                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-accent transition-colors p-8 card-hover">
-                    <div class="flex justify-between items-start mb-6">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="p-2 rounded-lg bg-blue-500/10 text-accent border border-blue-500/20">
-                                    <span class="iconify" data-icon="lucide:shield-check" data-width="24"></span>
-                                </span>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">AutonomousSOC</h3>
-                            </div>
-                            <p class="text-sm font-mono text-secondary">Policy-Based LLM Agent</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/trinadhsriram02/autonomous-soc" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-white"><span class="iconify" data-icon="lucide:github" data-width="20"></span></a>
-                            <a href="https://huggingface.co/spaces/trinadhsriram02/AutonomousSOC" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-accent"><span class="iconify" data-icon="lucide:external-link" data-width="20"></span></a>
-                        </div>
+                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-accent transition-colors p-8 card-hover flex flex-col">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="p-2 rounded-lg bg-blue-500/10 text-accent border border-blue-500/20">
+                            <span class="iconify" data-icon="lucide:shield-check" data-width="24"></span>
+                        </span>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-accent transition-colors">AutonomousSOC</h3>
                     </div>
-                    <ul class="space-y-3 text-sm text-primary mb-6">
+                    <p class="text-sm font-mono text-secondary mb-6">Policy-Based LLM Agent</p>
+                    
+                    <ul class="space-y-3 text-sm text-primary mb-6 flex-grow">
                         <li><strong class="text-white">Challenge:</strong> Manual security triage created bottlenecks, requiring 20 mins per alert.</li>
                         <li><strong class="text-white">Action:</strong> Architected a LangGraph ReAct agent integrated with AbuseIPDB & MITRE ATT&CK RAG. Built an asyncio event queue and secured via JWT-RBAC.</li>
                         <li><strong class="text-white">Result:</strong> Slashed latency by 97% (<30 sec/alert) at 94% precision. Diagnosed OOM faults and migrated to serverless with zero cost overhead.</li>
                     </ul>
+                    
+                    <!-- Highly Visible Project Links -->
+                    <div class="flex gap-3 mb-6">
+                        <a href="https://huggingface.co/spaces/trinadhsriram02/AutonomousSOC" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-background font-semibold hover:bg-blue-400 text-sm transition-colors">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="18"></span> Live App
+                        </a>
+                        <a href="https://github.com/trinadhsriram02/autonomous-soc" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-background border border-border hover:border-accent text-white text-sm transition-colors">
+                            <span class="iconify" data-icon="lucide:github" data-width="18"></span> GitHub
+                        </a>
+                    </div>
+
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                         <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">LangGraph</span>
                         <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">FastAPI</span>
@@ -194,27 +199,31 @@
                 </article>
 
                 <!-- ModelSentinel -->
-                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-emerald-500 transition-colors p-8 card-hover">
-                    <div class="flex justify-between items-start mb-6">
-                        <div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                                    <span class="iconify" data-icon="lucide:network" data-width="24"></span>
-                                </span>
-                                <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">ModelSentinel</h3>
-                            </div>
-                            <p class="text-sm font-mono text-secondary">ML Governance Scanner</p>
-                        </div>
-                        <div class="flex gap-2">
-                            <a href="https://github.com/trinadhsriram02/modelsentinel" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-white"><span class="iconify" data-icon="lucide:github" data-width="20"></span></a>
-                            <a href="https://huggingface.co/spaces/trinadhsriram02/ModelSentinel" target="_blank" class="p-2 rounded-full hover:bg-white/10 text-emerald-400"><span class="iconify" data-icon="lucide:external-link" data-width="20"></span></a>
-                        </div>
+                <article class="group relative rounded-xl bg-surface border border-border overflow-hidden hover:border-emerald-500 transition-colors p-8 card-hover flex flex-col">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                            <span class="iconify" data-icon="lucide:network" data-width="24"></span>
+                        </span>
+                        <h3 class="text-2xl font-bold text-white group-hover:text-emerald-400 transition-colors">ModelSentinel</h3>
                     </div>
-                    <ul class="space-y-3 text-sm text-primary mb-6">
+                    <p class="text-sm font-mono text-secondary mb-6">ML Governance Scanner</p>
+                    
+                    <ul class="space-y-3 text-sm text-primary mb-6 flex-grow">
                         <li><strong class="text-white">Challenge:</strong> Risk of deploying backdoored AI assets into production environments.</li>
                         <li><strong class="text-white">Action:</strong> Built a CI/CD governance pipeline via Neural Cleanse. Replaced regex parsing with Pydantic and enforced strict load parameters to stop RCE.</li>
                         <li><strong class="text-white">Result:</strong> Achieved 100% backdoor-detection accuracy to automate deployment blocks. Cut Docker build times by 80% using CPU-only wheels.</li>
                     </ul>
+
+                    <!-- Highly Visible Project Links -->
+                    <div class="flex gap-3 mb-6">
+                        <a href="https://huggingface.co/spaces/trinadhsriram02/ModelSentinel" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent text-background font-semibold hover:bg-blue-400 text-sm transition-colors">
+                            <span class="iconify" data-icon="lucide:external-link" data-width="18"></span> Live App
+                        </a>
+                        <a href="https://github.com/trinadhsriram02/modelsentinel" target="_blank" class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-background border border-border hover:border-emerald-500 text-white text-sm transition-colors">
+                            <span class="iconify" data-icon="lucide:github" data-width="18"></span> GitHub
+                        </a>
+                    </div>
+
                     <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                         <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">PyTorch</span>
                         <span class="px-2 py-1 text-xs rounded bg-background border border-border text-secondary font-mono">Sklearn</span>
@@ -230,7 +239,7 @@
     <section id="skills" class="py-24 px-6 relative border-t border-white/5">
         <div class="max-w-6xl mx-auto space-y-12">
             <div class="space-y-2">
-                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">Technical Arsenal</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white tracking-tight">Technical Skills</h2>
                 <p class="text-secondary">The underlying infrastructure and frameworks I use to ship robust code.</p>
             </div>
 
