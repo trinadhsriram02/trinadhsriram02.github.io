@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trinadh Sriram | AI/ML Engineer</title>
+    <title>Trinadh Sriram | AI/ML Software Engineer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
             <h1>Trinadh Sriram</h1>
             <h2>AI/ML Software Engineer</h2>
             <p class="summary">
-                2+ years of progressive experience owning end-to-end ML workflows: data ingestion, feature engineering, model training and validation, model serving, model monitoring, drift detection, observability, and CI/CD-gated cloud deployment.
+                Software Engineer with 2+ years of progressive experience owning end-to-end ML workflows: data ingestion, feature engineering, model training and validation, model serving, model monitoring, drift detection, observability, and CI/CD-gated cloud deployment. Targeting AI/ML engineering roles focused on production-grade systems.
             </p>
             <div class="contact-links">
                 <a href="mailto:trinadhsriramjob@gmail.com">trinadhsriramjob@gmail.com</a>
@@ -38,13 +38,11 @@
                         <a href="https://trinadhsriram02-autonomoussoc-api.hf.space" target="_blank">[API]</a>
                     </div>
                 </div>
-                <div class="tech-stack">LangGraph | FastApi | ChromaDB | LLaMA 3.1 8B | Docker | PyJWT</div>
+                <div class="tech-stack">LangGraph | FastAPI | ChromaDB | LLaMA 3.1 8B | Docker | PyJWT</div>
                 <ul class="bullets">
-                    <li>Architected a policy-based LangGraph ReAct agent cutting triage time 97% (20 min → <30 sec/alert) via autonomous integration with AbuseIPDB, NIST NVD, and MITRE ATT&CK RAG.</li>
-                    <li>Implemented complete ML workflow: raw ingestion → semantic feature engineering → LLM inference → Pydantic-validated output → confidence-gated remediation (85% threshold).</li>
-                    <li>Validated model health at 94% precision, 91% recall, 0.92 F1 on a labeled 20-alert benchmark.</li>
-                    <li>Engineered an event-driven async task queue (asyncio) handling 5 concurrent investigations under sub-0.1s dispatch to eliminate API timeouts.</li>
-                    <li>Secured system via JWT-RBAC, SHA-256 hashing, and timing-attack resistant hmac verification. Diagnosed and resolved production OOM crashes, migrating to a 16GB RAM serverless environment at zero cost.</li>
+                    <li><strong>Challenge:</strong> Manual security alert triage created critical operational bottlenecks, requiring 20 minutes of human analyst time per alert and risking delayed incident response.</li>
+                    <li><strong>Action:</strong> Architected an autonomous LangGraph ReAct agent integrated with AbuseIPDB, NIST NVD, and MITRE ATT&CK RAG. Engineered an asyncio event-driven task queue to process concurrent investigations and secured system surfaces via JWT-RBAC and SHA-256 hashing.</li>
+                    <li><strong>Result:</strong> Slashed triage latency by 97% (from 20 minutes to <30 seconds per alert) while maintaining 94% precision. Diagnosed and resolved a production OOM fault, migrating the architecture to a serverless environment to preserve 100% uptime at zero additional infrastructure cost.</li>
                 </ul>
             </article>
 
@@ -59,10 +57,9 @@
                 </div>
                 <div class="tech-stack">PyTorch | Scikit-learn | GitHub Actions CI/CD | FastAPI | Pydantic</div>
                 <ul class="bullets">
-                    <li>Achieved 100% backdoor-detection accuracy implementing Neural Cleanse and Activation Clustering as an ensemble ML evaluation pipeline.</li>
-                    <li>Shipped a GitHub Actions CI/CD governance pipeline scanning PyTorch model pushes, automatically blocking deployment on risk-score breach.</li>
-                    <li>Eliminated critical RCE vulnerability by enforcing weights_only=True in torch.load, and replaced fragile regex parsing with Pydantic structured outputs.</li>
-                    <li>Optimized Docker build time by 80% (15m → 3m) via CPU-only PyTorch wheels and hardened SQLite with WAL mode for concurrent stability.</li>
+                    <li><strong>Challenge:</strong> Supply-chain vulnerabilities in machine learning models presented a severe risk of deploying backdoored or poisoned AI assets directly into production environments.</li>
+                    <li><strong>Action:</strong> Built a CI/CD governance pipeline utilizing Neural Cleanse and Activation Clustering to scan all PyTorch model pushes. Replaced fragile regex parsing with Pydantic structured outputs and enforced strict loading parameters to eliminate RCE vulnerabilities.</li>
+                    <li><strong>Result:</strong> Achieved 100% backdoor-detection accuracy, automating the deployment block of compromised models. Optimized Docker image builds via CPU-only wheels, cutting build times by 80% (from 15 minutes to 3 minutes).</li>
                 </ul>
             </article>
         </section>
@@ -72,67 +69,81 @@
             
             <article class="item">
                 <div class="item-header">
-                    <h4>Independent AI/ML Engineer</h4>
+                    <h4>Independent AI/ML Engineer - Production Systems</h4>
                     <span>Jan 2026 - Present</span>
                 </div>
                 <ul class="bullets">
-                    <li>Designed, built, and deployed two end-to-end production AI/ML systems independently owning architecture, data pipelines, ML models, API serving, CI/CD, security, and monitoring.</li>
+                    <li>Designed, built, and deployed two end-to-end production AI/ML systems independently, owning architecture, data pipelines, ML model implementation, API serving, CI/CD, security, cloud deployment, and technical documentation.</li>
                 </ul>
             </article>
 
             <article class="item">
                 <div class="item-header">
-                    <h4>Cybersecurity & Data Analyst (Simulation) — Deloitte Australia</h4>
+                    <h4>Cybersecurity Analyst & Data Analyst (Simulation)</h4>
                     <span>July 2025</span>
                 </div>
+                <p class="sub-text">Deloitte Australia (Forage Industry Simulation)</p>
                 <ul class="bullets">
-                    <li>Identified suspicious user behavior via log-based threat analysis and built Tableau dashboards deriving business conclusions from forensic datasets.</li>
+                    <li>Identified suspicious user behavior by performing log-based threat analysis on web activity datasets, supporting a breach-response investigation using industry-standard SOC triage methodology.</li>
+                    <li>Built a Tableau dashboard and applied Excel-based classification to derive business conclusions from forensic datasets.</li>
                 </ul>
             </article>
 
             <article class="item">
                 <div class="item-header">
-                    <h4>Software Engineering Intern — Brainovision Solutions</h4>
+                    <h4>Software Engineering Intern</h4>
                     <span>May 2023 - June 2023</span>
                 </div>
+                <p class="sub-text">Brainovision Solutions India Pvt. Ltd. (Remote)</p>
                 <ul class="bullets">
-                    <li>Developed responsive web interfaces using HTML5/CSS3/JS and integrated RESTful APIs with backend services via Agile/SDLC practices.</li>
+                    <li>Developed responsive, cross-browser-compatible web interfaces utilizing HTML5, CSS3, and JavaScript.</li>
+                    <li>Integrated RESTful APIs with backend services while applying Git-based version control and Agile/SDLC practices across the development lifecycle.</li>
                 </ul>
             </article>
         </section>
 
         <section class="section">
-            <h3 class="section-title">Technical Capabilities</h3>
+            <h3 class="section-title">Technical Competencies</h3>
             <div class="skills-grid">
                 <div>
-                    <strong>Languages & ML</strong>
-                    <p>Python, SQL, PyTorch, Scikit-learn, LangGraph, LangChain, RAG, Vertex AI, Gemini.</p>
+                    <strong>Languages & Core ML</strong>
+                    <p>Python, SQL, PyTorch, Scikit-learn, NumPy, Pandas, DSA, OOP, System Design.</p>
+                </div>
+                <div>
+                    <strong>Generative AI & LLMs</strong>
+                    <p>LangGraph, LangChain, RAG, Sentence Transformers, Vertex AI, Gemini, Reinforcement Learning Principles.</p>
                 </div>
                 <div>
                     <strong>ML Workflows</strong>
-                    <p>Feature Engineering, Model Serving, A/B Evaluation, Drift Detection, Automated Retraining.</p>
+                    <p>Feature Engineering, Model Training/Serving, A/B Evaluation, Drift Detection, Automated Retraining.</p>
                 </div>
                 <div>
-                    <strong>Backend & DevOps</strong>
-                    <p>FastAPI, asyncio, Docker, GitHub Actions, GCP, HuggingFace, SQLite (WAL), ChromaDB.</p>
+                    <strong>Backend & Cloud Infrastructure</strong>
+                    <p>FastAPI, asyncio, Docker, GitHub Actions, GCP, HuggingFace, SQLite (WAL), ChromaDB, OAuth2, JWT.</p>
                 </div>
             </div>
         </section>
 
         <section class="section">
             <h3 class="section-title">Education & Certifications</h3>
+            
             <article class="item">
                 <div class="item-header">
                     <h4>B.Tech in Computer Science and Engineering</h4>
                     <span>Graduated June 2025</span>
                 </div>
-                <p class="sub-text">Narayana Engineering College | CGPA: 7.77 (First Class with Distinction)</p>
+                <p class="sub-text">Narayana Engineering College, Nellore, Andhra Pradesh</p>
+                <p class="sub-text"><strong>CGPA:</strong> 7.77 (First Class with Distinction)</p>
             </article>
-            <ul class="bullets">
-                <li><strong>Google Cloud:</strong> Prompt Design in Vertex AI, Build Real-World AI Apps with Gemini</li>
-                <li><strong>DeepLearning.AI:</strong> LangChain for LLM Development, Agents, ChatGPT Prompt Engineering</li>
-                <li><strong>Cisco:</strong> Cyber Threat Management, Python Essentials</li>
-            </ul>
+
+            <div class="certifications">
+                <strong>Verified Credentials:</strong>
+                <ul class="bullets">
+                    <li><strong>Google Cloud:</strong> Prompt Design in Vertex AI; Build Real-World AI Applications with Gemini (Aug 2025)</li>
+                    <li><strong>DeepLearning.AI:</strong> LangChain for LLM App Development; Agents with LangChain; ChatGPT Prompt Engineering</li>
+                    <li><strong>Cisco Networking Academy:</strong> Cyber Threat Management; Introduction to Cybersecurity; Python Essentials 1 & 2</li>
+                </ul>
+            </div>
         </section>
 
     </main>
